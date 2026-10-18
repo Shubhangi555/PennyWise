@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4338ca" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="A clear, personal view of your income and expenses." />
+    <title>Pennywise | Personal finance</title>
+    <script>
+      // Apply a saved light/dark choice before first paint (avoids a flash of the wrong theme).
+      // Key must match THEME_STORAGE_KEY in src/context/theme-context.ts.
+      try {
+        var t = localStorage.getItem('pennywise_theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
